@@ -1,6 +1,4 @@
-def Charts(ratings,movies):
-    movies.index=movies['movieId']
-    del movies['movieId']
+def get_charts(ratings,movies):
     movies=movies.iloc[:,:2]
     movies['score']=0
     for row in ratings.itertuples():
@@ -10,4 +8,4 @@ def Charts(ratings,movies):
     movies.sort_values(by=['score'],ascending=False,inplace=True)
     return movies
 
-
+#def get_user_item(ratings,id):

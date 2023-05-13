@@ -2,6 +2,8 @@ import pandas as pd
 
 def loadMovies():
     data=pd.read_csv(r'Data\movies.csv')
+    data.index=data['movieId']
+    del data['movieId']
     return data
 
 def loadRatings():
